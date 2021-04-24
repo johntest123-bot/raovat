@@ -11,32 +11,16 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-      $posts = [
-        [
-          'type_id' => 1,
-          'title' => 'F.A.Q',
-          'content' => 'f a q',
-          'slug' => 'f-a-q'
-        ],
-        [
-          'type_id' => 2,
-          'title' => 'Sell Cvv Good Fresh & Cc Fullz Info',
-          'content' => 'Sell Cvv Good Fresh & Cc Fullz Info',
-          'slug' => 'sell-cvv-good-fresh-cc-fullz-info'
-        ],
-        [
-          'type_id' => 3,
-          'title' => 'Sell Dumps Track1 Track2',
-          'content' => 'Sell Dumps Track1 Track2',
-          'slug' => 'sell-dumps-track1-track2'
-        ],
-        [
-          'type_id' => 4,
-          'title' => 'Payment',
-          'content' => 'payment',
-          'slug' => 'payment'
-        ]
-      ];
-      DB::table('posts')->insert($posts);
+      $user = [
+        'name' => 'admin',
+        'email' => 'admin@admin.com',
+        'is_admin' => true,
+        'icq' => 433,
+        
+        'email_verified_at' => now(),
+        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        'remember_token' => Str::random(10),
+    ];
+    DB::table('users')->insert($user);
     }
 }
