@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 @section('title', 'Dashboard')
 @section('content_header')
-<h1>Cập nhật tin tức</h1>
+<h1>Cập nhật bài viết</h1>
 @stop
 @section('content')
 @if($errors->any())
@@ -31,7 +31,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label require">Danh mục</label>
                 <div class="col-sm-10">
-                    <select name="article_category_id" class="form-control">
+                    <select name="type_id" class="form-control">
                         @foreach ($categories as $category)
                         <option value="{{ $category->id }}"
                             @if ($category->id == $article->type_id)
